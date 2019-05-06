@@ -9,7 +9,7 @@
 static EKEventStore *eventStore = nil;
 static NSDateComponents *oneDayAgoComponents = nil;
 static NSDateComponents *threeMonthFromNowComponents = nil;
-static QString trEventTitle = "CCtalk Class";
+static QString trEventTitle = "Class";
 static QString trEventNotesGroupID = "Group ID";
 static QString trEventNotesClassTitle = "Class Title";
 static QString trEventNotesClassLocation = "Class Link";
@@ -74,7 +74,7 @@ namespace Util {
             return false;
         }
 
-        // calendar name:  CCtalk-nickName
+        // calendar name:  -nickName
         NSString *strCalendarName = calendarName.toNSString();
 
         bool bFindResult = false;
@@ -95,7 +95,7 @@ namespace Util {
             return false;
         }
 
-        // calendar name:  CCtalk-nickName
+        // calendar name:  -nickName
         NSString *strCalendarName = calendarName.toNSString();
 
         bool bFindResult = false;
@@ -271,7 +271,7 @@ namespace Util {
         }
 
         if (!bFindResult) {
-            // if not find the calendar which named: [CCtalk-nickname], do not add event
+            // if not find the calendar which named: [-nickname], do not add event
             return false;
         }
 
