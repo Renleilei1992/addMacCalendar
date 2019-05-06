@@ -1,4 +1,13 @@
-﻿#include "util_calendar_event_mac.h"
+﻿/*================================================================
+*   Copyright (C) 2019 Renleilei. All rights reserved.
+*   
+*   文件名称：util_calendar_event_mac.mm
+*   创 建 者：Renleilei (renleilei1992@foxmail.com)
+*   创建日期：2019年02月06日
+*   描    述：工具类-添加事件到MacOS的日历中(与iPhone日历同步)
+*   版    本: Version 1.00
+================================================================*/
+#include "util_calendar_event_mac.h"
 //#include "notify/common_notify.h"
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
@@ -31,7 +40,7 @@ void CalendarAddEventThread::run()
 }
 
 namespace Util {
-
+	// 获取日历的权限
     bool CalendarEventMac::getCalendarPermission()
     {
         // [requestAccessToEntityType] ask for the permission of calendar
@@ -61,6 +70,7 @@ namespace Util {
         return hasPermision;
     }
 
+	// 是否已存在此名称的日历
     bool CalendarEventMac::hasCalendar(QString calendarName)
     {
         eventStore = [[EKEventStore alloc] init];
@@ -89,6 +99,7 @@ namespace Util {
         return bFindResult;
     }
 
+	// 创建一个日历并命名
     bool CalendarEventMac::createCalendar(QString calendarName)
     {
         if (eventStore == nil) {
@@ -165,6 +176,7 @@ namespace Util {
         return true;
     }
 
+	// 预处理: 将信息记录在静态变量中
     bool CalendarEventMac::prepareTranslation(QString _trEventTitle, QString _trEventNotesGroupID, QString _trEventNotesClassTitle, QString _trEventNotesClassLocation)
     {
         trEventTitle                = _trEventTitle;
@@ -175,6 +187,7 @@ namespace Util {
         return true;
     }
 
+	// 解析出ID(从字符串中获取到有用的信息)
     NSString* CalendarEventMac::parseContentIdFormNotes(NSString *notes)
     {
         NSRange range1 = [notes rangeOfString:@"videoId%22%3A%22" options:NSRegularExpressionSearch];
@@ -191,6 +204,7 @@ namespace Util {
         return parseCode;
     }
 
+	// 从日历中移除event
     bool CalendarEventMac::removeEvent(CalendarEventNode eventInfo, NSString *calendarName)
     {
         if (eventStore == nil) {
@@ -241,6 +255,7 @@ namespace Util {
         return true;
     }
 
+	// 添加事件进入日历
     bool CalendarEventMac::addEvent(CalendarEventNode eventInfo, NSString *calendarName)
     {
         if (eventStore == nil) {
