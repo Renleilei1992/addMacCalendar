@@ -289,10 +289,8 @@ namespace Util {
 
         // event.url
         NSString *eventID_nsstring = QString::number(eventInfo.eventID, 10).toNSString();
-//        NSString *address = @"ctim://sendmsg?type=content&id=";
-//        address = [NSString stringWithFormat:@"%@%@", address, eventID_nsstring];
-        NSString *address = @"https://www.cctalk.com/m/wechatapp?pagename=program&pageparam=%7B%22videoId%22%3A%22";
-        NSString *addressParams = @"%22%7D&pageoption=%7B%22withUniversalLink%22%3A%20false%2C%22withDeepLink%22%3A%20true%7D";
+        NSString *address = @"https://www.ye1996.cc";
+        NSString *addressParams = @"/resume.html";
         address = [NSString stringWithFormat:@"%@%@%@", address, eventID_nsstring, addressParams];
 
         // notes
