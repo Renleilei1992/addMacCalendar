@@ -1,4 +1,14 @@
-﻿#ifndef UTIL_CALENDAR_EVENT_MAC_H
+﻿/*================================================================
+*   Copyright (C) 2019 Renleilei. All rights reserved.
+*   
+*   文件名称：util_calendar_event_mac.h
+*   创 建 者：Renleilei (renleilei1992@foxmail.com)
+*   创建日期：2019年02月06日
+*   描    述：工具类-添加事件到MacOS的日历中(与iPhone日历同步)
+*   版    本: Version 1.00
+================================================================*/
+#pragma once
+#ifndef UTIL_CALENDAR_EVENT_MAC_H
 #define UTIL_CALENDAR_EVENT_MAC_H
 #include <QString>
 #include <QThread>
@@ -12,9 +22,6 @@ struct CalendarEventNode
     quint64 eventEndTime        = 0;
     quint32 eventType           = 0;
     quint32 eventDeleteStatus   = 0;
-    quint32 eventGroupID        = 0;
-    QString eventGroupName      = "";
-    quint32 eventVideoStatus    = 0;
 };
 
 class CalendarAddEventThread : public QThread
