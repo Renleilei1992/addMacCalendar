@@ -9,10 +9,10 @@
 static EKEventStore *eventStore = nil;
 static NSDateComponents *oneDayAgoComponents = nil;
 static NSDateComponents *threeMonthFromNowComponents = nil;
-static QString trEventTitle = "Class";
+static QString trEventTitle = "Event title";
 static QString trEventNotesGroupID = "Group ID";
-static QString trEventNotesClassTitle = "Class Title";
-static QString trEventNotesClassLocation = "Class Link";
+static QString trEventNotesClassTitle = "notes Title";
+static QString trEventNotesClassLocation = "notes Link";
 
 // add Event thread
 CalendarAddEventThread::CalendarAddEventThread(QVector<CalendarEventNode> &eventInfoVec, QString calendarName)
